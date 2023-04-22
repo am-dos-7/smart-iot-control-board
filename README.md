@@ -1,3 +1,3 @@
 # IoT Smart Control Board
-This project is intended to provide a fast and efficient approach for configuring and controlling [Home] a set of heterogeneous Automation devices.  
-It mainly relies on a self-configuration idea, 
+This project is intended to provide a fast and efficient approach for configuring and controlling [Home] a set of heterogeneous Automation devices. The challenge faced in most of the heterogeneous scenarios is the one of assigning a dedicated Graphical User Interface to each device, given the plethora of devices there could be.  
+The proposed solution mainly relies on a self-configuration devices idea around a centralized server, where each device knows its type and communicates it to the server upon its connection. The server (which also holds the control board) adds the GUI dedicated to this device according to its type. 
