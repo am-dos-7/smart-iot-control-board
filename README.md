@@ -16,3 +16,12 @@ During the test step, we have experimented with 3 differents device types:
 - Display: a remote device with a screen where it displays the text (or any characters string) sent through the GUI.
 - Lamp: a lamp/light device, receiving ON/OFF commands from the associated GUI and turns on/off a connected lamp accordingly.
 
+This repositery currently holds files of Qt server application as well as a test code for a Display ESP32-based client device.  
+## The server application
+It consists of 5 classes and a main file:
+- BaseGui class: serving as a  building block for all device type classes, it defines attributes (widgets) common to them. It is inherited by every device type class.
+- TmpSocket: a generic class which holds incoming client connections and related device type and name, waiting for the connection to be authenticated (here, only by checking the device type validity).
+- DisplayGui: defines an interface for Display devices, by adding a text zone and a button to the interface inherited from the BaseGui class.
+- LampGui: offers an interface for Lamp devices, by completing BaseGui with a switch button.
+- ControlBoard: handles incoming client connections (which are affected a TmpSocket instance), proceed with their authentication. If an incoming client is authenticated (if device type is supported), an interface is created accordingly and added to the control board. The connection is closed otherwise (device type not supported).  When a client closes its connection, the associated interface is automatically removed from the control board.
+
