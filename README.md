@@ -9,4 +9,10 @@ All the devices' GUIs have a common part including:
 
 It the current version, the device type is represented by an unsigned 8-bits coded integer.  
 The server and control board code is in the iot_control_board folder. It is written in C++, with the Qt framework.  
-A test client program is in the esp32_iot_display folder, written on platformio in C++. It is for interfacing a I2C OLED display with a ESP32 board, and which displays the message received from the server.
+A test client program is in the esp32_iot_display folder, written on platformio in C++. It is for interfacing a I2C OLED display with a ESP32 board, and which displays the message received from the server.  
+
+During the test step, we have experimented with 3 differents device types:
+- Camera: a remote camera which captures and sends image frames in a video-stream fashion to the server which displays it on the associated GUI.
+- Display: a remote device with a screen where it displays the text (or any characters string) sent through the GUI.
+- Lamp: a lamp/light device, receiving ON/OFF commands from the associated GUI and turns on/off a connected lamp accordingly.
+
