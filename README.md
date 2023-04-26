@@ -8,8 +8,8 @@ All the devices' GUIs have a common part including:
 - Close: it is a button which, when clicked, will close the socket dedicated to communication with the device. It has been added to simulate a disconnection or connection loss, and to check the effectiveness of a reconnection mechanism implemented on the device side.
 
 It the current version, the device type is represented by an unsigned 8-bits coded integer.  
-The server and control board code is in the iot_control_board folder. It is written in C++, with the Qt framework.  
-A test client program is in the esp32_iot_display folder, written on platformio in C++. It is for interfacing a I2C OLED display with a ESP32 board, and which displays the message received from the server.  
+The server and control board code is in the _iot_control_board_ folder. It is written in C++, with the Qt framework.  
+A test client program is in the _esp32_iot_display_ folder, written on platformio in C++. It is for interfacing a I2C OLED display with a ESP32 board, and which displays the message received from the server.  
 
 During the test step, we have experimented with 3 differents device types:
 - Camera: a remote camera which captures and sends image frames in a video-stream fashion to the server which displays it on the associated GUI.
@@ -26,8 +26,8 @@ It mainly consists of 5 classes:
 - ControlBoard: handles incoming client connections (which are affected a TmpSocket instance), proceed with their authentication. If an incoming client is authenticated (if device type is supported), an interface is created accordingly and added to the control board. The connection is closed otherwise (device type not supported).  When a client closes its connection, the associated interface is automatically removed from the control board.
 
 ## The Display device test code
-Located in the esp32_iot_display/src folder, it is made of:
+Located in the _esp32_iot_display/src_ folder, it is made of:
 - a TcpClient class: a multi-threaded custom TCP client based on POSIX thread and C Sockets API. Given a server IP and port number, it handles the connection/disconnection, data transmission/reception. It alo provides callback mechanism in case of deconnection (this is used for automatic reconnection trial, in this example), and packet reception.
 - a main file, which describes the interface with a I2C OLED device, defines the disconnection and packet reception handlers, and instanciates and starts a client with Display device type.
 
-As the skeleton is already provided, this project can be easily extended <ith any type of IP-based IoT device. All it takes is extending (inheriting) the BaseGui class for the interface, and implementing the TCP-based application level protocol in a function defined as Qt's slot and connected to the socket ReadyRead signal.
+As the skeleton is already provided, this project can be easily extended <ith any type of IP-based IoT device. All it takes is extending (inheriting) the BaseGui class for the interface, and implementing the TCP-based application level protocol in a function defined as _Qt's slot_ and connected to the socket __ReadyRead__ _signal_.
