@@ -31,7 +31,7 @@ Located in the _esp32_iot_display/src_ folder, it is made of:
 - a main file, which describes the interface with a I2C OLED device, defines the disconnection and packet reception handlers, and instanciates and starts a client with Display device type.
 
 ## Demo
-![Server started](https://github.com/am-dos-7/smart-iot-control-board/tree/main/img/server_started.PNG "Server started")
+![Server started](https://github.com/am-dos-7/smart-iot-control-board/blob/main/img/server_started.PNG "Server started")
 
 ## Extension
 As the skeleton is already provided, this project can be easily extended <ith any type of IP-based IoT device. All it takes is extending (inheriting) the BaseGui class for the interface, and implementing the TCP-based application level protocol in a function defined as _Qt's slot_ and connected to the socket __ReadyRead__ _signal_.
