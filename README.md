@@ -27,7 +27,7 @@ It mainly consists of 5 classes:
 
 ## The Display device test code
 Located in the _esp32_iot_display/src_ folder, it is made of:
-- a TcpClient class: a multi-threaded custom TCP client based on POSIX thread and C Sockets API. Given a server IP and port number, it handles the connection/disconnection, data transmission/reception. It alo provides callback mechanism in case of deconnection (this is used for automatic reconnection trial, in this example), and packet reception.
+- a TcpClient class: a multi-threaded custom TCP client based on POSIX thread and BSD C Sockets APIs. Given a server IP and port number, it handles the connection/disconnection, data transmission/reception. It alo provides callback mechanism in case of deconnection (this is used for automatic reconnection trial, in this example), and packet reception. The use of POSIX thread and BSD C Sockets APIs makes this code easily portable, and it can easily be adapted for devices running any Linux-based or Unix-like operating system, like a Raspberry Pi board running Raspberry Pi OS. 
 - a main file, which describes the interface with a I2C OLED device, defines the disconnection and packet reception handlers, and instanciates and starts a client with Display device type.
 
 ## Extension
