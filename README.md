@@ -31,6 +31,7 @@ Located in the _esp32_iot_display/src_ folder, it is made of:
 - a main file, which describes the interface with a I2C OLED device, defines the disconnection and packet reception handlers, and instanciates and starts a client with Display device type.
 
 ## Demo Video
+Below is a link to a demo video, realized with two devices, a ESP32-Cam and a ESP32 configured respectively as Camera and Display types:   
 https://youtu.be/g_imCpFkrwo
 
 ## Extension
