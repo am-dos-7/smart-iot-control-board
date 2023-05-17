@@ -38,4 +38,5 @@ https://youtu.be/g_imCpFkrwo
 As the skeleton is already provided, this project can be easily extended <ith any type of IP-based IoT device. All it takes is extending (inheriting) the BaseGui class for the interface, and implementing the TCP-based application level protocol in a function defined as _Qt's slot_ and connected to the socket __ReadyRead__ _signal_.
 
 
+#### License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
